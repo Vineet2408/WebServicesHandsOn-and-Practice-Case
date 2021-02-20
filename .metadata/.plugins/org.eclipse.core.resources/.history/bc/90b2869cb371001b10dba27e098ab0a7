@@ -1,0 +1,32 @@
+package com.cognizant.truyum.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import java.util.*;
+import com.cognizant.truyum.dao.MenuItemDao;
+import com.cognizant.truyum.model.*;
+
+@Service
+public class MenuItemService
+{
+	@Autowired
+	@Qualifier("menuItemDao")
+	private MenuItemDao menuItemDao;
+	
+	public List<MenuItem> getAllItemsAdmin()
+	{
+		return menuItemDao.getMenuItemListAdmin();
+	}
+
+	public List<MenuItem> getAllItemsCustomer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public MenuItem getMenuItem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

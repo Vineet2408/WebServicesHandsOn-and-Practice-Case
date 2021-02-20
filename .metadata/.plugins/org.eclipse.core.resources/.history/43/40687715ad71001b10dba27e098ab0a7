@@ -1,0 +1,27 @@
+package com.cognizant.truyum.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.cognizant.truyum.model.MenuItem;
+import com.cognizant.truyum.service.MenuItemService;
+
+@RestController
+public class MeuItemController 
+{
+	@Autowired
+	MenuItemService menuItemService;
+	@GetMapping("/")
+	public String getItemAdmin(ModelMap map)
+	{
+		List<MenuItem> list=menuItemService.getAllItemsAdmin();
+		map.addAttribute("menuItem",list);
+		return "menu-item-list-admin";
+	}
+
+}

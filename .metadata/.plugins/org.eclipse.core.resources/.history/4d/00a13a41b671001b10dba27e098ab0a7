@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+	https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="sandwich" class="com.cognizant.truyum.model.MenuItem" scope="prototype">
+	<property name="" value="IN" />
+	
+	<property name="name" value="Sandwich" />
+</bean>
+
+<bean id="countryList" class="java.util.ArrayList">
+	<constructor-arg>
+		<list>
+			<ref bean="in"></ref>
+			<ref bean="us"></ref>
+			<ref bean="de"></ref>
+			<ref bean="jp"></ref>
+			
+		</list>
+	</constructor-arg>
+</bean>
+</beans>

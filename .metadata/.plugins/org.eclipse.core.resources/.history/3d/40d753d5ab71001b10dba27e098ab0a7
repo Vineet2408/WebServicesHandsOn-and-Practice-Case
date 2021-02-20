@@ -1,0 +1,18 @@
+package com.cognizant.truyum.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MeuItemController 
+{
+	@Autowired
+	MenuItemService menuItemService;
+	@RequestMapping(value="/admin",method=RequestMethod.GET)
+	public String getItemAdmin(ModelMap map)
+	{
+		List<MenuItem> list=menuItemService.getAllItemsAdmin();
+		map.addAttribute("menuItem",list);
+		return "menu-item-list-admin";
+	}
+
+}

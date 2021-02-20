@@ -1,0 +1,37 @@
+package com.cognizant.truyum.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.cognizant.truyum.dao.CartDao;
+import com.cognizant.truyum.dao.CartEmptyException;
+import com.cognizant.truyum.model.MenuItem;
+
+public class CartService 
+{
+	
+	@Autowired
+	@Qualifier("cartDao")
+	CartDao cartDao;
+	
+	public void addCartItem(long userId, long menuItemId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	public void removeCartItem(long userId, long menuItemId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	public List<MenuItem> getAllCartItems(long userId) throws CartEmptyException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}
